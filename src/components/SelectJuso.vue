@@ -72,8 +72,8 @@ const clickJuso = (o: any) => {
     JusoService.getPosition(formData).then(
       (res) => {
         data.active = false;
-        console.log(res.data);
         if(res.data) {
+          data.addr = o.roadAddr;
           emit('set-addr', res.data);
         } else {
           console.log(res);

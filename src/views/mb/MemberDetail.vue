@@ -26,7 +26,23 @@
 					<tr><th class="th required">이름</th><td class="td"><input type="text" v-model="props.data.nm" maxlength="100" required /></td></tr>
 					<tr><th class="th required">휴대전화번호</th><td class="td"><input type="text" v-model="props.data.hpNo" maxlength="60" required /></td></tr>
 					<tr><th class="th required">우편번호</th><td class="td"><input type="text" v-model="props.data.postNo" maxlength="30" required /></td></tr>
-					<tr><th class="th required">주소</th><td class="td"><input type="text" v-model="props.data.addr" maxlength="200" required /></td></tr>
+					<tr>
+						<th class="th required">주소</th>
+						<td class="td">
+							<SelectJuso
+								:addr="props.data.addr"
+								:required="true"
+								:maxlength="200"
+								@set-addr="(o:any) => {
+									if(o.roadAddr) {
+										props.data.addr = o.roadAddr;
+									} else {
+										props.data.addr = o.addr;
+									}
+								}"
+							/>
+						</td>
+					</tr>
 					<tr><th class="th required">상세주소</th><td class="td"><input type="text" v-model="props.data.dtlAddr" maxlength="200" required /></td></tr>
 					<tr><th class="th required">방문횟수</th><td class="td"><input type="number" v-model="props.data.bisitCnt" required /></td></tr>
 					<tr><th class="th required">로그인일시</th><td class="td">
@@ -97,6 +113,7 @@ import FileListUploader from '../../components/FileListUploader.vue';
 import dateUtil from '../../utils/util.date';
 import gridUtil from '../../utils/util.grid';
 import SelectCompany from '../../components/SelectCompany.vue';
+import SelectJuso from '../../components/SelectJuso.vue';
 
 import { useAuthStore } from '../../store/store.auth';
 const auth = useAuthStore();
