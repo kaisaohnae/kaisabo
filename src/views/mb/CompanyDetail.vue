@@ -24,10 +24,26 @@
 							}"
 						/>
 					</td></tr>
-					<tr><th class="th required">주소</th><td class="td"><input type="text" v-model="props.data.addr" maxlength="200" required /></td></tr>
+					<tr>
+						<th class="th required">주소</th>
+						<td class="td">
+							<SelectJuso
+								:addr="props.data.addr"
+								:required="true"
+								:maxlength="200"
+								@set-addr="(o:any) => {
+									props.data.addr = o.addr;
+									props.data.lttd = o.lttd;
+									props.data.lotd = o.lotd;
+								}"
+							/>
+						</td>
+					</tr>
 					<tr><th class="th required">상세주소</th><td class="td"><input type="text" v-model="props.data.dtlAddr" maxlength="200" required /></td></tr>
-					<tr><th class="th required">위도</th><td class="td"><input type="text" v-model="props.data.lttd" maxlength="null" required /></td></tr>
-					<tr><th class="th required">경도</th><td class="td"><input type="text" v-model="props.data.lotd" maxlength="null" required /></td></tr>
+					
+					<tr><th class="th required">위도</th><td class="td"><input type="text" style="width:300px;" v-model="props.data.lttd" maxlength="null" required /></td></tr>
+					<tr><th class="th required">경도</th><td class="td"><input type="text" style="width:300px;" v-model="props.data.lotd" maxlength="null" required /></td></tr>
+					
 					<tr><th class="th">사이트URL</th><td class="td"><input type="text" v-model="props.data.steUrl" maxlength="100" /></td></tr>
 					<tr><th class="th required">전화번호</th><td class="td"><input type="text" v-model="props.data.telNo" maxlength="60" required /></td></tr>
 					<tr><th class="th">비고</th><td class="td"><input type="text" v-model="props.data.note" maxlength="200" /></td></tr>
@@ -50,6 +66,7 @@ import FileListUploader from '../../components/FileListUploader.vue';
 import dateUtil from '../../utils/util.date';
 import gridUtil from '../../utils/util.grid';
 import SelectCompany from '../../components/SelectCompany.vue';
+import SelectJuso from '../../components/SelectJuso.vue';
 
 import { useAuthStore } from '../../store/store.auth';
 const auth = useAuthStore();
