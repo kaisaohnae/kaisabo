@@ -39,6 +39,8 @@
 									} else {
 										props.data.addr = o.addr;
 									}
+									props.data.lttd = o.lttd;
+									props.data.lotd = o.lotd;
 								}"
 							/>
 						</td>
@@ -93,6 +95,8 @@
 						<CommonCode :cd="'YN_CD'" :model="props.data.lckYn" @set-data="(val) => { props.data.lckYn = val; }" />
 					</td></tr>
 					<tr><th class="th required">실패횟수</th><td class="td"><input type="number" v-model="props.data.flCnt" required /></td></tr>
+					<tr><th class="th required">위도</th><td class="td"><input type="text" v-model="props.data.lttd" maxlength="null" required /></td></tr>
+					<tr><th class="th required">경도</th><td class="td"><input type="text" v-model="props.data.lotd" maxlength="null" required /></td></tr>
 					<tr><th class="th">비고</th><td class="td"><input type="text" v-model="props.data.note" maxlength="200" /></td></tr>
 				</table>
 				<div class="btnWrap">
@@ -197,6 +201,8 @@ const saveInfo = () => { // 정보저장
 	formData.append('simAdmsCd', props.data.simAdmsCd + '');
 	formData.append('lckYn', props.data.lckYn + '');
 	formData.append('flCnt', props.data.flCnt);
+	formData.append('lttd', props.data.lttd + '');
+	formData.append('lotd', props.data.lotd + '');
 	formData.append('note', props.data.note + '');
 	formData.append('linkRef', props.data.linkRef + '');
 	formData.append('modId', props.data.modId + '');

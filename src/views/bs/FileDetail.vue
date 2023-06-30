@@ -95,7 +95,7 @@ const search = reactive({
 // 파일상세
 const data = reactive({
 	fileDetailGrid: {} as Grid,
-	required: ['fileNo', 'fileNm', 'fileOrgNm', 'path', 'size'],
+	required: ['fileNo', 'fileNm', 'fileOrgNm', 'path', 'size', 'prir'],
 	totalCount: 0,
 	list: [],
 	audit: false,
@@ -137,6 +137,7 @@ onMounted(() => {
 			{header: '경로', name: 'path', sortable: true, width: 100, align: 'left', disabled: false, validation: { dataType: 'string' , required: false }, editor: 'text'}, // 경로
 			{header: '사이즈', name: 'size', sortable: true, width: 100, align: 'right', disabled: false, validation: { dataType: 'number' , required: false }, editor: 'text'}, // 사이즈
 			{header: '연동참조', name: 'linkRef', sortable: true, width: 100, align: 'left', disabled: false, validation: { dataType: 'string' , required: true }, editor: 'text'}, // 연동참조
+			{header: '우선순위', name: 'prir', sortable: true, width: 100, align: 'right', disabled: false, validation: { dataType: 'number' , required: false }, editor: 'text'}, // 우선순위
 			{header: '수정ID', name: 'modId', align: 'left', sortable: true, width: 110, disabled: true }, // 수정ID
 			{header: '수정일시', name: 'modDt', align: 'left', sortable: true, width: 120, disabled: true }, // 수정일시
 			{header: '등록ID', name: 'regId', align: 'left', sortable: true, width: 110, disabled: true }, // 등록ID

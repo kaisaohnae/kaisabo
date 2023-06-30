@@ -95,7 +95,7 @@ const search = reactive({
 // 업체메뉴권한
 const data = reactive({
 	menuRoleGrid: {} as Grid,
-	required: ['menuNo', 'useYn'],
+	required: ['menuNo', 'menuNm', 'useYn'],
 	totalCount: 0,
 	list: [],
 	audit: false,
@@ -132,6 +132,7 @@ onMounted(() => {
 		columns: [
 			{header: '메뉴번호', name: 'menuNo', sortable: true, width: 100, align: 'right', disabled: false, validation: { dataType: 'number' , required: false }, editor: 'text'}, // 메뉴번호
 			{header: '업체ID', name: 'cmpId', sortable: true, width: 100, align: 'left', disabled: (auth.userInfo.cmpId != 'kaisa'), editor: 'text'}, // 업체ID
+			{header: '메뉴명', name: 'menuNm', sortable: true, width: 100, align: 'left', disabled: false, validation: { dataType: 'string' , required: false }, editor: 'text'}, // 메뉴명
 			{header: '사용여부', name: 'useYn', width: 120, align: 'left', sortable: true, defaultValue: 'Y', disabled: false, validation: { dataType: 'string' , required: false }, 
 				formatter: 'listItemText',
 				editor: {

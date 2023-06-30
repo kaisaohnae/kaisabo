@@ -1,6 +1,6 @@
 <template>
-  <div id="loading">
-    <div class="loadingCircle">
+  <div id="loading" v-if="loading.progress">
+    <div class="loadingCircle" v-if="loading.active">
       <svg viewBox="0 0 100 100">
         <defs>
           <filter id="shadow">
@@ -20,10 +20,12 @@
 </template>
 
 <script setup lang="ts">
+import { useLoadingStore } from '../store/store.loading';
 
+const loading = useLoadingStore();
 </script>
 <style>
-#loading {width:100%; height:100%; position:fixed; left:0; top:0; background:rgba(0,0,0,0.1); z-index:9000;}
+#loading {width:100%; height:100%; position:fixed; left:0; top:0; background:rgba(0,0,0,0); z-index:9000;}
 #loading .loadingCircle {width:100px; height:100px; position:fixed; left:50%; top:50%; margin:-50px 0 0 -50px;}
 @keyframes animation {
   0% {

@@ -1,5 +1,5 @@
 <template>
-<v-loading v-if="loading.active" />
+<v-loading />
 <v-alert v-if="alert.active" :info="alert.info" />
 <div id="container" v-bind:class="{menuOn : setting.menu.active}">
 	<router-view />
@@ -9,11 +9,9 @@
 <script setup lang="ts">
 import vLoading from './components/Loading.vue';
 import vAlert from './components/Alert.vue';
-import { useLoadingStore } from './store/store.loading';
 import { useAlertStore } from './store/store.alert';
 import { useSettingStore } from './store/store.setting';
 
-const loading = useLoadingStore();
 const alert = useAlertStore();
 const setting = useSettingStore();
 

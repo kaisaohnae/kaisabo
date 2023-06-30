@@ -101,7 +101,7 @@ const search = reactive({
 // 회원
 const data = reactive({
 	memberGrid: {} as Grid,
-	required: ['mbrId', 'lv', 'pwd', 'nic', 'nm', 'hpNo', 'postNo', 'addr', 'dtlAddr', 'bisitCnt', 'loginDt', 'pwdRfsDt', 'mbrStatCd', 'email', 'lckYn', 'flCnt'],
+	required: ['mbrId', 'lv', 'pwd', 'nic', 'nm', 'hpNo', 'postNo', 'addr', 'dtlAddr', 'bisitCnt', 'loginDt', 'pwdRfsDt', 'mbrStatCd', 'email', 'lckYn', 'flCnt', 'lttd', 'lotd'],
 	totalCount: 0,
 	list: [],
 	audit: false,
@@ -128,6 +128,8 @@ const data = reactive({
 		simAdmsCd: '',
 		lckYn: 'Y',
 		flCnt: 0,
+		lttd: '',
+		lotd: '',
 		note: '',
 		linkRef: '',
 		modId: '',
@@ -172,6 +174,8 @@ const add = () => {
 		simAdmsCd: '',
 		lckYn: '',
 		flCnt: 0,
+		lttd: '',
+		lotd: '',
 		note: '',
 		linkRef: '',
 		modId: '',
@@ -253,6 +257,8 @@ onMounted(() => {
 				},
 			},
 			{header: '실패횟수', name: 'flCnt', sortable: true, width: 100, align: 'right', disabled: true, validation: { dataType: 'number' , required: false }, editor: 'text'}, // 실패횟수
+			{header: '위도', name: 'lttd', sortable: true, width: 100, align: 'left', disabled: true, validation: { dataType: 'string' , required: false }, editor: 'text'}, // 위도
+			{header: '경도', name: 'lotd', sortable: true, width: 100, align: 'left', disabled: true, validation: { dataType: 'string' , required: false }, editor: 'text'}, // 경도
 			{header: '비고', name: 'note', sortable: true, width: 100, align: 'left', disabled: true, validation: { dataType: 'string' , required: true }, editor: 'text'}, // 비고
 			{header: '연동참조', name: 'linkRef', align: 'left', sortable: true, width: 110, disabled: true, hidden: (auth.userInfo.cmpId != 'kaisa') }, // 연동참조
 			{header: '수정ID', name: 'modId', align: 'left', sortable: true, width: 110, disabled: true }, // 수정ID
