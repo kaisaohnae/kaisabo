@@ -3,7 +3,7 @@
 		<div class="popupWrap">
 			<h3>게시판 등록/수정</h3>
 			<div class="close" @click="emit('set-close')"><span class="icon">&#xe097;</span></div>
-			<form @submit.prevent="save">
+			<form @submit.prevent="">
 				<table class="popT">
 					<tr v-if="auth.userInfo.cmpId == 'kaisa'"><th class="th required">업체</th><td class="td"><SelectCompany :cmpId="props.data.cmpId" :required="true" @set-company="(o: any) => { props.data.cmpId = o.cmpId; }" /></td></tr>
 					<tr><th class="th required">게시판분류번호</th><td class="td"><input type="number" v-model="props.data.brdCatNo" required /></td></tr>
@@ -26,7 +26,7 @@
 					</td></tr>
 				</table>
 				<div class="btnWrap">
-					<button type="submit">저장</button>
+					<button type="submit" @click="save">저장</button>
 					<button type="button" class="gray" @click="emit('set-close')">취소</button>
 				</div>
 			</form>

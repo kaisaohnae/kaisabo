@@ -3,7 +3,7 @@
 		<div class="popupWrap">
 			<h3>공지사항 등록/수정</h3>
 			<div class="close" @click="emit('set-close')"><span class="icon">&#xe097;</span></div>
-			<form @submit.prevent="save">
+			<form @submit.prevent="">
 				<table class="popT">
 					<tr v-if="auth.userInfo.cmpId == 'kaisa'">
 						<th class="th">업체ID</th>
@@ -57,7 +57,7 @@
 					</td></tr>
 				</table>
 				<div class="btnWrap">
-					<button type="submit">저장</button>
+					<button type="submit" @click="save">저장</button>
 					<button type="button" class="gray" @click="emit('set-close')">취소</button>
 				</div>
 			</form>

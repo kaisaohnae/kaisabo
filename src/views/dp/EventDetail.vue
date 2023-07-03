@@ -3,7 +3,7 @@
 		<div class="popupWrap">
 			<h3>이벤트 등록/수정</h3>
 			<div class="close" @click="emit('set-close')"><span class="icon">&#xe097;</span></div>
-			<form @submit.prevent="save">
+			<form @submit.prevent="">
 				<table class="popT">
 					<tr><th class="th required">제목</th><td class="td"><input type="text" v-model="props.data.tit" maxlength="200" required /></td></tr>
 					<tr><td colspan="2" class="td">
@@ -47,7 +47,7 @@
 					</td></tr>
 				</table>
 				<div class="btnWrap">
-					<button type="submit">저장</button>
+					<button type="submit" @click="save">저장</button>
 					<button type="button" class="gray" @click="emit('set-close')">취소</button>
 				</div>
 			</form>
