@@ -1,0 +1,1 @@
+import{j as e}from"./jsonApi-71500902.js";class t{async getDashboard(a){return(await e("/main/getDashboard",a||{})).data}async getCalendar(a){return(await e("/main/getCalendar",a||{})).data}}const i=new t;export{i as M};
