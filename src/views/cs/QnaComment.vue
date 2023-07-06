@@ -111,6 +111,7 @@ const data = reactive({
 		qnaNo: 0,
 		cmpId: '',
 		fileNo: 0,
+		mbrId: '',
 		mbrNm: '',
 		cnts: '',
 		linkRef: '',
@@ -139,6 +140,7 @@ const add = () => {
 		qnaNo: 0,
 		cmpId: '',
 		fileNo: 0,
+		mbrId: '',
 		mbrNm: '',
 		cnts: '',
 		linkRef: '',
@@ -159,6 +161,7 @@ onMounted(() => {
 			{header: 'QNA 번호', name: 'qnaNo', sortable: true, width: 100, align: 'right', disabled: true, validation: { dataType: 'number' , required: false }, editor: 'text'}, // QNA 번호
 			{header: '업체ID', name: 'cmpId', sortable: true, width: 100, align: 'left', disabled: true, hidden: (auth.userInfo.cmpId != 'kaisa'), editor: 'text'}, // 업체ID
 			{header: '파일번호', name: 'fileNo', sortable: true, width: 100, align: 'right', disabled: true, validation: { dataType: 'number' , required: true }, editor: 'text'}, // 파일번호
+			{header: '회원ID', name: 'mbrId', sortable: true, width: 100, align: 'left', disabled: true, validation: { dataType: 'string' , required: true }, editor: 'text'}, // 회원ID
 			{header: '회원 명', name: 'mbrNm', sortable: true, width: 100, align: 'left', disabled: true, validation: { dataType: 'string' , required: true }, editor: 'text'}, // 회원 명
 			{header: '연동참조', name: 'linkRef', align: 'left', sortable: true, width: 110, disabled: true, hidden: (auth.userInfo.cmpId != 'kaisa') }, // 연동참조
 			{header: '수정 ID', name: 'modId', align: 'left', sortable: true, width: 110, disabled: true }, // 수정 ID

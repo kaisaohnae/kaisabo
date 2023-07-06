@@ -20,6 +20,7 @@
 							}"
 						/>
 					</td></tr>
+					<tr><th class="th">회원ID</th><td class="td"><input type="text" v-model="props.data.mbrId" maxlength="100" /></td></tr>
 					<tr><th class="th">회원 명</th><td class="td"><input type="text" v-model="props.data.mbrNm" maxlength="100" /></td></tr>
 					<tr><td colspan="2" class="td">
 						<div id="qnaCommentEditor"></div>
@@ -114,6 +115,7 @@ const saveInfo = () => { // 정보저장
 	formData.append('qnaNo', props.data.qnaNo);
 	formData.append('cmpId', props.data.cmpId + '');
 	formData.append('fileNo', props.data.fileNo);
+	formData.append('mbrId', props.data.mbrId + '');
 	formData.append('mbrNm', props.data.mbrNm + '');
 	formData.append('cnts', edit.editor.getMarkdown());
 	formData.append('linkRef', props.data.linkRef + '');

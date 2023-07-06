@@ -7,9 +7,9 @@
 				<table class="popT">
 					<tr v-if="auth.userInfo.cmpId == 'kaisa'"><th class="th required">업체</th><td class="td"><SelectCompany :cmpId="props.data.cmpId" :required="true" @set-company="(o: any) => { props.data.cmpId = o.cmpId; }" /></td></tr>
 					<tr><th class="th">회원ID</th><td class="td"><input type="text" v-model="props.data.mbrId" maxlength="100" /></td></tr>
-					<tr><th class="th">회원 명</th><td class="td"><input type="text" v-model="props.data.mbrNm" maxlength="100" /></td></tr>
-					<tr><th class="th">회원 전화번호</th><td class="td"><input type="text" v-model="props.data.mbrTelNo" maxlength="60" /></td></tr>
-					<tr><th class="th">회원 이메일</th><td class="td"><input type="text" v-model="props.data.mbrEmail" maxlength="100" /></td></tr>
+					<tr><th class="th">회원명</th><td class="td"><input type="text" v-model="props.data.mbrNm" maxlength="100" /></td></tr>
+					<tr><th class="th">회원전화번호</th><td class="td"><input type="text" v-model="props.data.mbrTelNo" maxlength="60" /></td></tr>
+					<tr><th class="th">회원이메일</th><td class="td"><input type="text" v-model="props.data.mbrEmail" maxlength="100" /></td></tr>
 					<tr><th class="th">비밀번호</th><td class="td"><input type="text" v-model="props.data.pwd" maxlength="200" /></td></tr>
 					<tr><th class="th">제목</th><td class="td"><input type="text" v-model="props.data.tit" maxlength="200" /></td></tr>
 					<tr><td colspan="2" class="td">
